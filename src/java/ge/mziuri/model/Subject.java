@@ -6,6 +6,8 @@
 package ge.mziuri.model;
 
 import ge.mziuri.model.enums.SubjectTitle;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,8 +16,40 @@ import ge.mziuri.model.enums.SubjectTitle;
 public class Subject {
     
     private int id;
-    private SubjectTitle title;
-    
+    private SubjectTitle  subjecttitle;
+    private List<Event> EventsList = new ArrayList<>(); 
+
+    public Subject() {
+    }
+
+    public Subject(int id, SubjectTitle subjecttitle) {
+        this.id = id;
+        this.subjecttitle = subjecttitle;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public SubjectTitle getSubjecttitle() {
+        return subjecttitle;
+    }
+
+    public void setSubjecttitle(SubjectTitle subjecttitle) {
+        this.subjecttitle = subjecttitle;
+    }
+
+    public List<Event> getEventsList() {
+        return EventsList;
+    }
+
+    public void setEventsList(List<Event> EventsList) {
+        this.EventsList = EventsList;
+    }
     
     
     

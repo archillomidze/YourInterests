@@ -20,12 +20,13 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void addUser(User user) {
         try {
-            String sql = "INSERT INTO system_user (firstname,lastname,username,password) VALUES (?,?,?,?)";
+            String sql = "INSERT INTO system_user (firstname,surname,username,password,vipstatus) VALUES (?,?,?,?,?)";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, user.getFirstName());
-            pstmt.setString(2, user.getLastName());
+            pstmt.setString(1, user.getFirstname());
+            pstmt.setString(2, user.getSurname());
             pstmt.setString(3, user.getUsername());
             pstmt.setString(4, user.getPassword());
+            pstmt.setBoolean(5, false);
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -42,8 +43,9 @@ public class UserDAOImpl implements UserDAO {
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 String firstname = rs.getString("firstname");
-                String lastname = rs.getString("lastname");
-                User user = new User(firstname, lastname, username, password);
+                String surname = rs.getString("surname");
+                boolean VIPStatus = rs.getBoolean("VIPStatus");
+                User user = new User(firstname, surname, username, password, VIPStatus);
                 return user;
             } else {
                 return null;

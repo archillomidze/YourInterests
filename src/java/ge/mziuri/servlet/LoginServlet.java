@@ -42,7 +42,7 @@ public class LoginServlet extends HttpServlet {
                 }
             }
             count++;
-            pw.append("გამარჯობა " + user.getFirstName() + " ეს არის შენი " + count + " შემოსვლა");
+            pw.append("გამარჯობა " + user.getFirstname() + " ეს არის შენი " + count + " შემოსვლა");
             Cookie cookie = new Cookie(COUNT_VISITS, String.valueOf(count));
             response.addCookie(cookie);
         }
