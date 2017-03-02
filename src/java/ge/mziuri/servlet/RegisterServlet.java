@@ -15,18 +15,17 @@ public class RegisterServlet extends HttpServlet {
     
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("რამე");
+        
     }
     
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("ვინმე");
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String username = request.getParameter("username");
         String password = Integer.toString(request.getParameter("password").hashCode());
         UserDAO userDAO = new UserDAOImpl();
-        User user = new User(firstname, lastname, username, password);
+        User user = new User(firstname, lastname, username, password, false);
         userDAO.addUser(user);
         RequestDispatcher rd = request.getRequestDispatcher("index.html");
         rd.forward(request, response);

@@ -4,5 +4,5 @@ CREATE TABLE system_user (
     surname VARCHAR(30),
     username VARCHAR(30),
     password VARCHAR(30),
-    vipstatus BOOLEAN not null,
+    vipstatus BOOLEAN not null
     );
