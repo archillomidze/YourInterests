@@ -6,7 +6,6 @@ import ge.mziuri.dao.UserDAOImpl;
 import ge.mziuri.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,9 +27,9 @@ public class LoginServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter pw = response.getWriter();
         if (user == null) {
-            pw.append("ასეთი მომხმარებელი არ არისებობს!");
+            pw.append("No such user exists");
         } else {
-            pw.append("გამარჯობა " + user.getFirstname());
+            pw.append("Hello " + user.getFirstname());
         }
     }
 }
