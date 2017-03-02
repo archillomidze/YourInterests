@@ -5,7 +5,6 @@
  */
 package ge.mziuri.model;
 
-import ge.mziuri.model.enums.ArticleTitle;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,13 +15,13 @@ import java.util.List;
 public class Article {
     
     private int id;
-    private ArticleTitle articletitle;
+    private String articletitle;
     private List<ArticleElement> ArticleElementsList = new ArrayList<>(); 
 
     public Article() {
     }
 
-    public Article(int id, ArticleTitle articletitle) {
+    public Article(int id, String articletitle) {
         this.id = id;
         this.articletitle = articletitle;
     }
@@ -35,11 +34,11 @@ public class Article {
         this.id = id;
     }
 
-    public ArticleTitle getArticletitle() {
+    public String getArticletitle() {
         return articletitle;
     }
 
-    public void setArticletitle(ArticleTitle articletitle) {
+    public void setArticletitle(String articletitle) {
         this.articletitle = articletitle;
     }
 

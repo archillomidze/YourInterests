@@ -13,5 +13,8 @@ public enum SubjectTitle {
     
     SPORT, 
     POLITIC, 
+    COOKBOOK,
+    MUSIC,
+    ART,
     FAIRY_TALE
 }
