@@ -17,13 +17,15 @@ public class Article {
     private int id;
     private String articletitle;
     private List<ArticleElement> ArticleElementsList = new ArrayList<>(); 
+    private String description;
 
     public Article() {
     }
 
-    public Article(int id, String articletitle) {
+    public Article(int id, String articletitle, String description) {
         this.id = id;
         this.articletitle = articletitle;
+        this.description = description;
     }
 
     public int getId() {
@@ -48,6 +50,14 @@ public class Article {
 
     public void setArticleElementsList(List<ArticleElement> ArticleElementsList) {
         this.ArticleElementsList = ArticleElementsList;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
     
     
