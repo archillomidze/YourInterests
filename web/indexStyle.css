@@ -122,3 +122,9 @@ code{font-weight:normal; font-style:normal; font-family:Georgia, "Times New Roma
 .fl_left{float:left;}
 .fl_right{float:right;}
 
+.mybtn{
+     position:absolute;
+   top:15px;
+   right:30px;
+   width: 150px;
+}
