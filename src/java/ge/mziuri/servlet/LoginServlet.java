@@ -6,6 +6,8 @@ import ge.mziuri.dao.UserDAOImpl;
 import ge.mziuri.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +20,7 @@ public class LoginServlet extends HttpServlet {
     }
     
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         UserDAO userDAO = new UserDAOImpl();
@@ -27,9 +29,13 @@ public class LoginServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         PrintWriter pw = response.getWriter();
         if (user == null) {
-            pw.append("No such user exists");
+            RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+            request.setAttribute("loginFailed", true);
+            rd.forward(request, response);
         } else {
-            pw.append("Hello " + user.getFirstname());
+          RequestDispatcher rd = request.getRequestDispatcher("LogedinIndex.jsp");
+          request.setAttribute("user", user);
+          rd.forward(request, response);
         }
     }
 }
