@@ -15,6 +15,7 @@ public class User {
     private List<Article> WantToRead = new ArrayList<>(); 
     private List<Article> AlreadyRead = new ArrayList<>(); 
     private List<Article> Favorites = new ArrayList<>(); 
+    private List<Article> MyArticles = new ArrayList<>(); 
         
     public User() {
     }

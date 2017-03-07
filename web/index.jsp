@@ -4,6 +4,7 @@
     <head>
         <title>Your Interests</title>
         <link rel="stylesheet" href="indexStyle.css" type="text/css">
+        <link rel="shortcut icon" href="Resources/Icon_T.ico">
     </head>
     <body>
         <div class="wrapper row2">
@@ -15,9 +16,9 @@
                     <input type="submit" value="Login" /> <br>
                     <div style = "color: red;">
                         <%
-                        if (request.getAttribute("loginFailed") != null && request.getAttribute("loginFailed").equals(Boolean.TRUE)) {
-                            out.print("Incorrect data!");
-                        }
+                            if (request.getAttribute("loginFailed") != null && request.getAttribute("loginFailed").equals(Boolean.TRUE)) {
+                                out.print("Incorrect data!");
+                            }
                         %>
                     </div>
                 </form>

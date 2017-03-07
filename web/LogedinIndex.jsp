@@ -1,3 +1,4 @@
+<%@page import="java.nio.channels.SelectionKey"%>
 <%@page import="ge.mziuri.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -5,13 +6,21 @@
     <head>
         <title>Your Interests</title>
         <link rel="stylesheet" href="indexStyle.css" type="text/css">
+        <link rel="shortcut icon" href="Resources/Icon_T.ico">
     </head>
     <body>
         <div class="wrapper row2">
             <div id="container" class="clear">
                 <div>
-                    <button  class="mybtn" style = "color: black;"><%=((User)request.getAttribute("user")).getFirstname()%></button>
-
+                    <button type="button" class="mybtn"><%=((User) request.getAttribute("user")).getFirstname()%></button>
+                    <select id="green" style = "color: black;"><%=((User) request.getAttribute("user")).getUsername()%>
+                        <option value="user">Choose</option>
+                        <option value="MyArticles">My Articles</option>
+                        <option value="Favourites">Favourites</option>
+                        <option value="WanttoRead">Want to Read</option>
+                        <option value="AlreadyRead">Already Read</option>
+                        <option value="AddNew">Add New></option>        
+                    </select>
                 </div>
                 <div class="logo">
                     <section id="slider" class="clear">
