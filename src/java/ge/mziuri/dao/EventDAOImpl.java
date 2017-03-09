@@ -11,16 +11,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-/**
- *
- * @author user_2
- */
-public class EventDAOImpl implements EventDAO{
-    
+public class EventDAOImpl implements EventDAO {
+
     private Connection conn;
-    
+
     private PreparedStatement pstmt;
-    
+
     public EventDAOImpl() {
         conn = DatabaseUtil.getConnection();
     }
@@ -50,5 +46,5 @@ public class EventDAOImpl implements EventDAO{
             System.out.println(ex.getMessage());
         }
     }
-    
+
 }

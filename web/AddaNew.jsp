@@ -20,12 +20,18 @@
                     <option value="art">Art</option>  
                     <option value="fairy_tale">Fairy Tale</option>  
                 </select>
+                <div id="boxinbox">
+                    <input list="datalist" placeholder="Choose an Event ">
+                    <datalist id="datalist">
+                        <option value="fairy_tale">
+                    </datalist>
+                </div>
                 <input id="title" type="text" name="title" placeholder="Choose Title.."/> <br>
                 <textarea id="description" name="description" rows="4" cols="50" placeholder="Write some brief information"></textarea>
             </div>
             <button id="sbbutton" type="submit" action="index.jsp">Submit</button>
         </form>
-        
-        
+
+
     </body>
 </html>

@@ -1,3 +1,6 @@
+<%@page import="ge.mziuri.model.User"%>
+<%@page import="ge.mziuri.dao.UserDAOImpl"%>
+<%@page import="ge.mziuri.dao.UserDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

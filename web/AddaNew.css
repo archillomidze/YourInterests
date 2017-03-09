@@ -5,15 +5,15 @@ body{
     position: absolute;
     right:580px;
     color: white;
-    top:40px;
+    top:0px;
 }
 .boxed {
     position: absolute;
     border: 10px solid white;
-    top:140px;
+    top:80px;
     right:460px;
     width:400px;
-    height:350px;
+    height:400px;
 }
 #SelectID{
     position:absolute;
@@ -47,24 +47,36 @@ select{
     -o-transition:0.3s ease all;
     transition:0.3s ease all;
 }
+#boxinbox{
+    position: absolute;
+    border: 5px solid white;
+    top:90px;
+    right:95px;
+    width:210px;
+    height:20px;
+}
 #title{
     position: absolute;
-    right:75px;
-    top: 100px;
+    right:77px;
+    top: 150px;
     width:250px;
     height:25px;
 }
 #description{
     position: absolute;
     right:60px;
-    top: 170px;
+    top: 210px;
     width:280px;
     height:140px;
 }
 #sbbutton{
     position: absolute;
     right:520px;
-    bottom:90px;
+    bottom:70px;
     height: 50px;
     width: 300px;
+}
+input{
+    position: absolute;
+    width:206px;
 }

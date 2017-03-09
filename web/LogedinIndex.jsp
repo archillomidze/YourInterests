@@ -12,14 +12,13 @@
         <div class="wrapper row2">
             <div id="container" class="clear">
                 <div>
-                    <button type="button" class="mybtn"><%=((User) request.getAttribute("user")).getFirstname()%></button>
-                    <select id="green" style = "color: black;"><%=((User) request.getAttribute("user")).getUsername()%>
-                        <option value="user">Choose</option>
-                        <option value="MyArticles">My Articles</option>
-                        <option value="Favourites">Favourites</option>
-                        <option value="WanttoRead">Want to Read</option>
-                        <option value="AlreadyRead">Already Read</option>
-                        <option value="AddNew">Add New></option>        
+                    <select id="green" style = "color: black;">
+                        <option value="user"><%=((User) request.getAttribute("user")).getUsername()%></option>
+                        <option value="MyArticles" onclick="window.open('MyArticles.jsp')">My Articles</option>
+                        <option value="Favourites" onclick="window.open('Favourites.jsp')">Favourites</option>
+                        <option value="WanttoRead" onclick="window.open('WanttoRead.jsp')">Want to Read</option>
+                        <option value="AlreadyRead" onclick="window.open('AlreadyRead.jsp')">Already Read</option>
+                        <option value="AddNew" onclick="window.open('AddaNew.jsp')">Add New+</option>        
                     </select>
                 </div>
                 <div class="logo">
