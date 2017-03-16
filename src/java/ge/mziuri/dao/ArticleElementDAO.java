@@ -5,14 +5,12 @@
  */
 package ge.mziuri.dao;
 
-import ge.mziuri.model.Article;
+import java.util.List;
 
 /**
  *
  * @author user_2
  */
-public interface ArticleDAO {
-    
-    void crateArticle(Article article);
-    
+public interface ArticleElementDAO {
+    void createArticleElement(List<String> textLists, List<String> picturesLists); 
 }

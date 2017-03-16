@@ -1,6 +1,7 @@
 
 package ge.mziuri.dao;
 
+import ge.mziuri.model.Article;
 import ge.mziuri.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,6 +55,11 @@ public class UserDAOImpl implements UserDAO {
             System.out.println(ex.getMessage());
         }
         return null;
+    }
+
+    @Override
+    public void addtoFavorites(Article article) {
+        
     }
     
 }
