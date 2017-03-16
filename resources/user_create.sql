@@ -6,3 +6,9 @@ CREATE TABLE system_user (
     password VARCHAR(30),
     vipstatus BOOLEAN not null
     );
+
+CREATE TABLE event (
+    id serial primary key, 
+    name VARCHAR(30),
+    subject_title VARCHAR(30)
+);

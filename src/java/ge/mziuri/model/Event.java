@@ -23,8 +23,7 @@ public class Event {
     public Event() {
     }
 
-    public Event(int id, String name, SubjectTitle title) {
-        this.id = id;
+    public Event(String name, SubjectTitle title) {
         this.name = name;
         this.title = title;
     }

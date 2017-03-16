@@ -6,7 +6,7 @@
 package ge.mziuri.dao;
 
 import ge.mziuri.model.Event;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public interface EventDAO {
     
-    ArrayList<Event> getAllEventBySubjectName(String name);
+    List<Event> getAllEventBySubjectName(String name);
     void addEvent(Event event);
     
 }
