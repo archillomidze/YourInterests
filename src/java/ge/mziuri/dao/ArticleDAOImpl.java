@@ -20,13 +20,10 @@ public class ArticleDAOImpl implements ArticleDAO {
     @Override
     public void crateArticle(Article article) {
         try {
-            String sql = "INSERT INTO article (articletitle, ArticleElementsList , description) VALUES (?,?,?)";
+            String sql = "INSERT INTO article (articletitle, description) VALUES (?,?)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, article.getArticletitle());
-            for(int i=0; i<article.getArticleElementsList().size(); i++){
-                pstmt.setArray(2, (Array) article.getArticleElementsList().get(i));
-            }
-            pstmt.setString(3, article.getDescription());
+            pstmt.setString(2, article.getDescription());
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

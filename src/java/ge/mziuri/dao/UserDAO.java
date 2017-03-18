@@ -1,7 +1,6 @@
 
 package ge.mziuri.dao;
 
-import ge.mziuri.model.Article;
 import ge.mziuri.model.User;
 
 public interface UserDAO {
@@ -10,7 +9,12 @@ public interface UserDAO {
     
     User getUser(String username, String password);
     
-    void addtoFavorites(Article article);
+    void addtoFavorites(int id);
     
-    void addtoWishlist(Article article);
+    void addtoWishlist(int id);
+    
+    void addtoAlreadyRead(int id);
+    
+    void addtoMyList(int id);
+    
 }
