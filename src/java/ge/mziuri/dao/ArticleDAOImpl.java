@@ -1,18 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ge.mziuri.dao;
 
 import ge.mziuri.model.Article;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
-/**
- *
- * @author user_2
- */
 public class ArticleDAOImpl implements ArticleDAO {
     
     private Connection conn;
@@ -25,7 +19,18 @@ public class ArticleDAOImpl implements ArticleDAO {
 
     @Override
     public void crateArticle(Article article) {
-        
+        try {
+            String sql = "INSERT INTO article (articletitle, ArticleElementsList , description) VALUES (?,?,?)";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, article.getArticletitle());
+            for(int i=0; i<article.getArticleElementsList().size(); i++){
+                pstmt.setArray(2, (Array) article.getArticleElementsList().get(i));
+            }
+            pstmt.setString(3, article.getDescription());
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     
 }

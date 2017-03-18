@@ -11,4 +11,6 @@ public interface UserDAO {
     User getUser(String username, String password);
     
     void addtoFavorites(Article article);
+    
+    void addtoWishlist(Article article);
 }

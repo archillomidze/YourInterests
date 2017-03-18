@@ -3,6 +3,7 @@ package ge.mziuri.dao;
 
 import ge.mziuri.model.Article;
 import ge.mziuri.model.User;
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -59,7 +60,34 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public void addtoFavorites(Article article) {
-        
+        try {
+            String sql = "INSERT INTO favourites (articletitle,ArticleElementsList,description) VALUES (?,?,?)";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, article.getArticletitle());
+            for(int i=0; i<article.getArticleElementsList().size(); i++){
+                pstmt.setArray(2, (Array) article.getArticleElementsList().get(i));
+            }
+            pstmt.setString(3, article.getDescription());
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @Override
+    public void addtoWishlist(Article article) {
+        try {
+            String sql = "INSERT INTO wishlist (articletitle,ArticleElementsList,description) VALUES (?,?,?)";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, article.getArticletitle());
+            for(int i=0; i<article.getArticleElementsList().size(); i++){
+                pstmt.setArray(2, (Array) article.getArticleElementsList().get(i));
+            }
+            pstmt.setString(3, article.getDescription());
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
     
 }
