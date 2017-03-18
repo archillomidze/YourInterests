@@ -1,20 +1,17 @@
-
 package ge.mziuri.dao;
 
-import ge.mziuri.model.Article;
 import ge.mziuri.model.User;
-import java.sql.Array;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class UserDAOImpl implements UserDAO {
-    
+
     private Connection conn;
-    
+
     private PreparedStatement pstmt;
-    
+
     public UserDAOImpl() {
         conn = DatabaseUtil.getConnection();
     }
@@ -59,15 +56,12 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void addtoFavorites(Article article) {
+    public void addtoFavorites(int id) {
+        String favourites;
         try {
-            String sql = "INSERT INTO favourites (articletitle,ArticleElementsList,description) VALUES (?,?,?)";
+            String sql = "UPDATE system_user set favourites = concat(favourites, ?)";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, article.getArticletitle());
-            for(int i=0; i<article.getArticleElementsList().size(); i++){
-                pstmt.setArray(2, (Array) article.getArticleElementsList().get(i));
-            }
-            pstmt.setString(3, article.getDescription());
+            pstmt.setInt(1, id);
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -75,19 +69,42 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void addtoWishlist(Article article) {
+    public void addtoWishlist(int id) {
+        String wishlist;
         try {
-            String sql = "INSERT INTO wishlist (articletitle,ArticleElementsList,description) VALUES (?,?,?)";
+            String sql = "UPDATE system_user set wishlist = concat(wishlist, ?)";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, article.getArticletitle());
-            for(int i=0; i<article.getArticleElementsList().size(); i++){
-                pstmt.setArray(2, (Array) article.getArticleElementsList().get(i));
-            }
-            pstmt.setString(3, article.getDescription());
+            pstmt.setInt(1, id);
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
     }
-    
+
+    @Override
+    public void addtoAlreadyRead(int id) {
+        String alreadyread;
+        try {
+            String sql = "UPDATE system_user set alreadyread = concat(alreadyread, ?)";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    @Override
+    public void addtoMyList(int id) {
+        String mylist;
+        try {
+            String sql = "UPDATE system_user set mylist = concat(mylist, ?)";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+
 }
