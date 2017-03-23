@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ge.mziuri.dao;
+package ge.mziuri.runner;
 
-import java.util.List;
+import ge.mziuri.model.Article;
 
 /**
  *
  * @author user_2
  */
-public interface ArticleElementDAO {
-    void createArticleElement(List<String> textLists); 
+public class ArticleRunner {
+    
+   // Article article  = new Article();
+  //  crateArticle cr = new 
+    
 }

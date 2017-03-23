@@ -26,22 +26,10 @@ public class ArticleElementDAOImpl implements ArticleElementDAO{
     }
     
     @Override
-    public void createArticleElement(List<String> textLists, List<String> picturesLists) {
+    public void createArticleElement(List<String> textLists) {
         try {
-            
-            
- //           pstmt = con.prepareStatement("INSERT INTO test (question_type, question, possible_answers, correct_answer_indexes, correct_open_answers, contest_id) VALUES (?,?,?,?,?,?)");
-//            String answers = "";
-//            for (int i = 0; i < test.getAnswers().size(); i++) {
-//                answers = answers + test.getAnswers().get(i);
-//                if (i != test.getAnswers().size() - 1) {
-//                    answers = answers + SPLITTER;
-//               }
-//           }
-            
-            
-            
-            String sql = "INSERT INTO system_user (index, text, pictures) VALUES (?,?,?)";
+          
+            String sql = "INSERT INTO article_element (index, text, pictures) VALUES (?,?,?)";
             ArticleElement article_element = new ArticleElement();
             String text = "";
             for(int i = 0; i < article_element.getTextList().size(); i++){
@@ -52,11 +40,17 @@ public class ArticleElementDAOImpl implements ArticleElementDAO{
             }
             
             String pictures = "";
+            for(int i = 0; i < article_element.getPicturesList().size(); i++){
+                text = text + article_element.getPicturesList().get(i);
+                if(i != article_element.getTextList().size() - 1){
+                    text = text + SPLITTER;
+                }
+            }
             
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, article_element.getIndex());
-//            pstmt.setString(2, article_element.getTextList());
-//            pstmt.setString(3, user.getUsername());
+            pstmt.setString(2, text);
+            pstmt.setString(3, pictures);
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -64,3 +58,14 @@ public class ArticleElementDAOImpl implements ArticleElementDAO{
     }
     
 }
+
+
+
+//            pstmt = con.prepareStatement("INSERT INTO test (question_type, question, possible_answers, correct_answer_indexes, correct_open_answers, contest_id) VALUES (?,?,?,?,?,?)");
+//            String answers = "";
+//            for (int i = 0; i < test.getAnswers().size(); i++) {
+//                answers = answers + test.getAnswers().get(i);
+//                if (i != test.getAnswers().size() - 1) {
+//                    answers = answers + SPLITTER;
+//               }
+//            }
