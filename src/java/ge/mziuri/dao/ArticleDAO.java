@@ -13,6 +13,6 @@ import ge.mziuri.model.Article;
  */
 public interface ArticleDAO {
     
-    void crateArticle(Article article);
+    void crateArticle(Article article, int eventId);
     
 }

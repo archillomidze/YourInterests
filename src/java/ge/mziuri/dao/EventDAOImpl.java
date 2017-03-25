@@ -41,7 +41,7 @@ public class EventDAOImpl implements EventDAO {
     @Override
     public void addEvent(Event event) {
         try {
-            String sql = "INSERT INTO event (name, subject_name) VALUES (?,?)";
+            String sql = "INSERT INTO event (name, subject_title) VALUES (?,?)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, event.getName());
             pstmt.setString(2, event.getSubjectTitle().name());

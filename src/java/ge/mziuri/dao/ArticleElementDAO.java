@@ -5,6 +5,7 @@
  */
 package ge.mziuri.dao;
 
+import ge.mziuri.model.ArticleElement;
 import java.util.List;
 
 /**
@@ -12,5 +13,5 @@ import java.util.List;
  * @author user_2
  */
 public interface ArticleElementDAO {
-    void createArticleElement(List<String> textLists); 
+    void createArticleElement(ArticleElement articleElement, int articleId); 
 }

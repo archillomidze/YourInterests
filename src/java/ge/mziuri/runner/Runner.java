@@ -17,19 +17,20 @@ public class Runner {
     public static void main(String[] args) {
        
         ArticleElement article_element = new ArticleElement();
+        article_element.setIndex(1);
         ArrayList<String> text = new ArrayList();
         text.add("asddfgghj");
         text.add("123456");
         text.add("qwertryu");
         ArrayList<String> pictures = new ArrayList();
-        pictures.add("asddfgghj");
-        pictures.add("123456");
-        pictures.add("qwertryu");
+        pictures.add("gfd");
+        pictures.add("dgsg");
+        pictures.add("dgd");
         article_element.setTextList(text);
         article_element.setPicturesList(pictures);
         ArticleElementDAOImpl art = new ArticleElementDAOImpl();
         
-        art.createArticleElement(text);
+        art.createArticleElement(article_element, 1);
         
     }
 }

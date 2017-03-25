@@ -18,12 +18,13 @@ public class ArticleDAOImpl implements ArticleDAO {
     }
 
     @Override
-    public void crateArticle(Article article) {
+    public void crateArticle(Article article, int eventId) {
         try {
-            String sql = "INSERT INTO article (articletitle, description) VALUES (?,?)";
+            String sql = "INSERT INTO article (articletitle, description, event_id) VALUES (?,?,?)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, article.getArticletitle());
             pstmt.setString(2, article.getDescription());
+            pstmt.setInt(3, eventId);
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
