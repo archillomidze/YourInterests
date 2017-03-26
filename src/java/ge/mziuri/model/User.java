@@ -99,6 +99,14 @@ public class User {
     public void setFavorites(List<Article> Favorites) {
         this.Favorites = Favorites;
     }
+
+    public List<Article> getMyArticles() {
+        return MyArticles;
+    }
+
+    public void setMyArticles(List<Article> MyArticles) {
+        this.MyArticles = MyArticles;
+    }
     
     
     
