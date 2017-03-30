@@ -5,7 +5,7 @@ import ge.mziuri.dao.ArticleElementDAOImpl;
 import ge.mziuri.model.ArticleElement;
 import java.util.ArrayList;
 
-public class Runner {
+public class ArticleElementRunner {
     public static void main(String[] args) {
        
         ArticleElement article_element = new ArticleElement();
