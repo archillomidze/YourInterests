@@ -4,10 +4,10 @@ CREATE TABLE system_user (
     surname VARCHAR(30),
     username VARCHAR(30),
     password VARCHAR(30),
-    favourites TEXT;
-	wishlist TEXT;
-	alreadyread TEXT;
-	mylist TEXT;
+    favourites TEXT,
+	wishlist TEXT,
+	alreadyread TEXT,
+	mylist TEXT
     );
 
 CREATE TABLE event (

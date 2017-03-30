@@ -7,7 +7,7 @@ import ge.mziuri.model.ArticleElement;
 import ge.mziuri.model.User;
 import java.util.ArrayList;
 
-public class Runner {
+public class ArticleElementRunner {
 
     public static void main(String[] args) {
        
