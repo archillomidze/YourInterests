@@ -1,0 +1,28 @@
+textarea{
+    position: absolute;
+    left:280px;
+    top: 170px;
+}
+hr{
+    height: 3px;
+    color: white;
+    background-color: blue;
+    padding: 5px;
+    top:100px;
+    position: relative;
+}
+#TopText{
+    position: absolute;
+    color: #0095cc;
+    left:550px;
+}
+#inp1{
+    position: absolute;
+    left:480px;
+    top: 350px;
+}
+#inp2{
+    position: absolute;
+    left:735px;
+    top: 349px;
+}

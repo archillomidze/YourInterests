@@ -5,6 +5,9 @@ CREATE TABLE system_user (
     username VARCHAR(30),
     password VARCHAR(30),
     favourites TEXT;
+	wishlist TEXT;
+	alreadyread TEXT;
+	mylist TEXT;
     );
 
 CREATE TABLE event (

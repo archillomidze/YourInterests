@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ge.mziuri.dao;
 
 import ge.mziuri.model.ArticleElement;
@@ -10,10 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- *
- * @author user_2
- */
 public class ArticleElementDAOImpl implements ArticleElementDAO{
     
     private static final String SPLITTER = "#@~";

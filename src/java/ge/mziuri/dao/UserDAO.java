@@ -2,6 +2,7 @@
 package ge.mziuri.dao;
 
 import ge.mziuri.model.User;
+import java.util.ArrayList;
 import java.util.List;
 
 public interface UserDAO {
@@ -18,12 +19,12 @@ public interface UserDAO {
     
     void addtoMyList(int id,User user);
     
-    String getFavourites(User user,String s);
+    List getFavourites(List<String>favourites);
     
-    String getWishlist(User user,String s);
+    List getWishlist(List<String>wishlist);
     
-    String getAlreadyRead(User user,String s);
+    List getAlreadyRead(List<String>alreadyread);
     
-    String getMyList(User user,String s);
+    List getMyList(List<String>mylist);
     
 }

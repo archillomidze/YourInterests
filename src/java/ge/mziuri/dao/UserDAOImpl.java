@@ -60,8 +60,8 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void addtoFavorites(int id,User user) {
-        List<Article> favourites = new ArrayList<>(); 
+    public void addtoFavorites(int id, User user) {
+        List<Article> favourites = new ArrayList<>();
         try {
             String sql = "UPDATE system_user set favourites = concat(favourites, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -74,8 +74,8 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void addtoWishlist(int id,User user) {
-        List<Article> wishlist = new ArrayList<>(); 
+    public void addtoWishlist(int id, User user) {
+        List<Article> wishlist = new ArrayList<>();
         try {
             String sql = "UPDATE system_user set wishlist = concat(wishlist, ?)";
             pstmt = conn.prepareStatement(sql);
@@ -88,7 +88,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void addtoAlreadyRead(int id,User user) {
+    public void addtoAlreadyRead(int id, User user) {
         List<Article> alreadyread = new ArrayList<>();
         try {
             String sql = "UPDATE system_user set alreadyread = concat(alreadyread, ?)";
@@ -102,7 +102,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void addtoMyList(int id,User user) {
+    public void addtoMyList(int id, User user) {
         List<Article> mylist = new ArrayList<>();
         try {
             String sql = "UPDATE system_user set mylist = concat(mylist, ?)";
@@ -116,39 +116,67 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public String getFavourites(User user, String s) {
-        List<String> favourites = new ArrayList<>(Arrays.asList(user.getFavorites().toString().split(",")));
-        for (int i = 0; i < favourites.size(); i++) {
-            s = favourites.get(i);
+    public List getFavourites(List<String>favourites) {
+        try {
+            String sql = "SELECT * FROM system_user favourites";
+            pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                String favouritesM[] = rs.getString("favourites").split(",");
+                favourites=Arrays.asList(favouritesM);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
-        return s;
+        return favourites;
     }
 
     @Override
-    public String getWishlist(User user,String s) {
-    List<String> wishlist = new ArrayList<>(Arrays.asList(user.getFavorites().toString().split(",")));
-        for (int i = 0; i < wishlist.size(); i++) {
-            s = wishlist.get(i);
+    public List getWishlist(List<String>wishlist) {
+         try {
+            String sql = "SELECT * FROM system_user wishlist";
+            pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                String wishlistM[] = rs.getString("wishlist").split(",");
+                wishlist=Arrays.asList(wishlistM);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
-        return s;
+        return wishlist;
     }
 
     @Override
-    public String getAlreadyRead(User user,String s) {
-        List<String> alreadyread = new ArrayList<>(Arrays.asList(user.getFavorites().toString().split(",")));
-        for (int i = 0; i < alreadyread.size(); i++) {
-            s = alreadyread.get(i);
+    public List getAlreadyRead(List<String>alreadyread) {
+        try {
+            String sql = "SELECT * FROM system_user alreadyread";
+            pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                String alreadyreadM[] = rs.getString("alreadyread").split(",");
+                alreadyread=Arrays.asList(alreadyreadM);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
-        return s;
+        return alreadyread;
     }
 
     @Override
-    public String getMyList(User user,String s) {
-        List<String> mylist = new ArrayList<>(Arrays.asList(user.getFavorites().toString().split(",")));
-        for (int i = 0; i < mylist.size(); i++) {
-            s = mylist.get(i);
+    public List getMyList(List<String>mylist) {
+        try {
+            String sql = "SELECT * FROM system_user mylist";
+            pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                String mylistM[] = rs.getString("alreadyread").split(",");
+                mylist=Arrays.asList(mylistM);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
         }
-        return s;
+        return mylist;
     }
 
 }
