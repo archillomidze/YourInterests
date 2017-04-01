@@ -61,9 +61,10 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void addtoFavorites(int id, User user) {
         try {
-            String sql = "UPDATE system_user set favourites = concat(favourites, ?)";
+            String sql = "UPDATE system_user set favourites = concat(favourites, ?) WHERE id=?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, id);
+            pstmt.setString(1, "," + id);
+            pstmt.setInt(2, user.getId());
             pstmt.executeUpdate();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -74,8 +75,9 @@ public class UserDAOImpl implements UserDAO {
     public void addtoWishlist(int id, User user) {
         List<Article> wishlist = new ArrayList<>();
         try {
-            String sql = "UPDATE system_user set wishlist = concat(wishlist, ?)";
+            String sql = "UPDATE system_user set wishlist = concat(wishlist, ?) WHERE id=?";
             pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, "," + id);
             pstmt.setInt(1, id);
             user.setWantToRead(wishlist);
             pstmt.executeUpdate();
@@ -88,8 +90,9 @@ public class UserDAOImpl implements UserDAO {
     public void addtoAlreadyRead(int id, User user) {
         List<Article> alreadyread = new ArrayList<>();
         try {
-            String sql = "UPDATE system_user set alreadyread = concat(alreadyread, ?)";
+            String sql = "UPDATE system_user set alreadyread = concat(alreadyread, ?) WHERE id=?";
             pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, "," + id);
             pstmt.setInt(1, id);
             user.setAlreadyRead(alreadyread);
             pstmt.executeUpdate();
@@ -102,9 +105,10 @@ public class UserDAOImpl implements UserDAO {
     public void addtoMyList(int id, User user) {
         List<Article> mylist = new ArrayList<>();
         try {
-            String sql = "UPDATE system_user set mylist = concat(mylist, ?)";
+            String sql = "UPDATE system_user set mylist = concat(mylist, ?) WHERE id=?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, id);
+            pstmt.setString(1, "," + id);
             user.setMyArticles(mylist);
             pstmt.executeUpdate();
         } catch (SQLException ex) {
@@ -113,36 +117,42 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List getFavourites(List<String> favourites,User user) {
+    public List<Integer> getFavourites(User user) {
+        List<Integer> favorities = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM system_user favourite WHERE username = ?";
+            String sql = "SELECT * FROM system_user favourite WHERE id = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, user.getUsername());
+            pstmt.setInt(1, user.getId());
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                String username=rs.getString("username");
                 String favouritesM[] = rs.getString("favourites").split(",");
-                favourites = Arrays.asList(favouritesM);
-                user.setUsername(username);
+                for (String s : favouritesM) {
+                    if (s != null && !s.isEmpty()) {
+                        favorities.add(Integer.parseInt(s));
+                    }
+                }
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return favourites;
+        return favorities;
     }
 
     @Override
-    public List getWishlist(List<String> wishlist,User user) {
+    public List getWishlist(User user) {
+        List<Integer> wishlist = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM system_user wishlist WHERE username = ?";
+            String sql = "SELECT * FROM system_user wishlist WHERE id = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, user.getUsername());
+            pstmt.setInt(1, user.getId());
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                String username=rs.getString("username");
                 String wishlistM[] = rs.getString("wishlist").split(",");
-                wishlist = Arrays.asList(wishlistM);
-                user.setUsername(username);
+                for (String s : wishlistM) {
+                    if (s != null && !s.isEmpty()) {
+                        wishlist.add(Integer.parseInt(s));
+                    }
+                }
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -151,17 +161,20 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List getAlreadyRead(List<String> alreadyread,User user) {
+    public List getAlreadyRead(User user) {
+        List<Integer> alreadyread = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM system_user alreadyread WHERE username = ?";
+            String sql = "SELECT * FROM system_user alreadyread WHERE id = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, user.getUsername());
+            pstmt.setInt(1, user.getId());
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                String username=rs.getString("username");
                 String alreadyreadM[] = rs.getString("alreadyread").split(",");
-                alreadyread = Arrays.asList(alreadyreadM);
-                user.setUsername(username);
+                for (String s : alreadyreadM) {
+                    if (s != null && !s.isEmpty()) {
+                        alreadyread.add(Integer.parseInt(s));
+                    }
+                }
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -170,17 +183,20 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List getMyList(List<String> mylist,User user) {
+    public List getMyList(User user) {
+        List<Integer> mylist = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM system_user mylist WHERE username = ?";
+            String sql = "SELECT * FROM system_user mylist WHERE id = ?";
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, user.getUsername());
+            pstmt.setInt(1, user.getId());
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
-                String username=rs.getString("username");
-                String mylistM[] = rs.getString("alreadyread").split(",");
-                mylist = Arrays.asList(mylistM);
-                user.setUsername(username);
+                String mylistM[] = rs.getString("mylist").split(",");
+                for (String s : mylistM) {
+                    if (s != null && !s.isEmpty()) {
+                        mylist.add(Integer.parseInt(s));
+                    }
+                }
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
