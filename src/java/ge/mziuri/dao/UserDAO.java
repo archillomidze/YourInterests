@@ -19,12 +19,12 @@ public interface UserDAO {
     
     void addtoMyList(int id,User user);
     
-    List getFavourites(List<String>favourites);
+    List getFavourites(List<String>favourites,User user);
     
-    List getWishlist(List<String>wishlist);
+    List getWishlist(List<String>wishlist,User user);
     
-    List getAlreadyRead(List<String>alreadyread);
+    List getAlreadyRead(List<String>alreadyread,User user);
     
-    List getMyList(List<String>mylist);
+    List getMyList(List<String>mylist,User user);
     
 }

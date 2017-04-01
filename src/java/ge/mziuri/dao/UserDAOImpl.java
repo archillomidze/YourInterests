@@ -113,14 +113,17 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List getFavourites(List<String> favourites) {
+    public List getFavourites(List<String> favourites,User user) {
         try {
-            String sql = "SELECT * FROM system_user favourites";
+            String sql = "SELECT * FROM system_user favourite WHERE username = ?";
             pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, user.getUsername());
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
+                String username=rs.getString("username");
                 String favouritesM[] = rs.getString("favourites").split(",");
                 favourites = Arrays.asList(favouritesM);
+                user.setUsername(username);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -129,14 +132,17 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List getWishlist(List<String> wishlist) {
+    public List getWishlist(List<String> wishlist,User user) {
         try {
-            String sql = "SELECT * FROM system_user wishlist";
+            String sql = "SELECT * FROM system_user wishlist WHERE username = ?";
             pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, user.getUsername());
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
+                String username=rs.getString("username");
                 String wishlistM[] = rs.getString("wishlist").split(",");
                 wishlist = Arrays.asList(wishlistM);
+                user.setUsername(username);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -145,14 +151,17 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List getAlreadyRead(List<String> alreadyread) {
+    public List getAlreadyRead(List<String> alreadyread,User user) {
         try {
-            String sql = "SELECT * FROM system_user alreadyread";
+            String sql = "SELECT * FROM system_user alreadyread WHERE username = ?";
             pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, user.getUsername());
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
+                String username=rs.getString("username");
                 String alreadyreadM[] = rs.getString("alreadyread").split(",");
                 alreadyread = Arrays.asList(alreadyreadM);
+                user.setUsername(username);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -161,14 +170,17 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List getMyList(List<String> mylist) {
+    public List getMyList(List<String> mylist,User user) {
         try {
-            String sql = "SELECT * FROM system_user mylist";
+            String sql = "SELECT * FROM system_user mylist WHERE username = ?";
             pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, user.getUsername());
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
+                String username=rs.getString("username");
                 String mylistM[] = rs.getString("alreadyread").split(",");
                 mylist = Arrays.asList(mylistM);
+                user.setUsername(username);
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

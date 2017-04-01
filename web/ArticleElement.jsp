@@ -12,8 +12,15 @@
                 <hr>
                 <form>
                     <textarea rows="10" cols="100"></textarea>
-                    <input id="inp1" type="file" name="pic" accept="image/*">
-                    <input  id="inp2" type="submit">
+
+                    <input id="inp2" type="file" accept="image/*" onchange="loadFile(event)">
+                    <img id="inp1"/>
+                    <script>
+                        var loadFile = function (event) {
+                            var output = document.getElementById('inp1');
+                            output.src = URL.createObjectURL(event.target.files[0]);
+                        };
+                    </script>
                 </form>
-    </body>
-</html>
+                </body>
+                </html>

@@ -28,7 +28,7 @@ CREATE TABLE article_element (
     index INT not NULL,
     text TEXT,
     pictures TEXT,
-    article_id INT REFERENCES article_element(id),
+    article_id INT REFERENCES article_element(id)
 );
 
 
