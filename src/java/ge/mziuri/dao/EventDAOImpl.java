@@ -22,9 +22,16 @@ public class EventDAOImpl implements EventDAO {
     public List<Event> getAllEventBySubjectName(String name) {
         List<Event> events = new ArrayList<>();
         try {
-            String sql = "SELECT * FROM event WHERE subject_name = ?";
+            String sql;
+            if (name != null) {
+                sql = "SELECT * FROM event WHERE subject_name = ?";
+            } else {
+                sql = "SELECT * FROM event";
+            }
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, name);
+            if (name != null) {
+                pstmt.setString(1, name);
+            }
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
                 String eventname = rs.getString("name");
