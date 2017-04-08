@@ -57,4 +57,10 @@ public class EventDAOImpl implements EventDAO {
             System.out.println(ex.getMessage());
         }
     }
+
+    @Override
+    public Event getEventbySubjectTitleAndEventName(SubjectTitle subjecttitle, String eventname) {
+        
+        return null;
+    }
 }
