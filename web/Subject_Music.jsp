@@ -1,17 +1,14 @@
-<%-- 
-    Document   : Subject_Music
-    Created on : Apr 1, 2017, 3:23:18 PM
-    Author     : tatol
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Music</title>
+        <link rel="stylesheet" href="Subjects.css" type="text/css">
+        <link rel="shortcut icon" href="Resources/Icon_T.ico">
     </head>
-    <body>
-        <h1>Hello World!</h1>
+    <body id="musicbody">
+        <h1 id="TopTextmsc">Music</h1>
+        <hr id="hrft">
     </body>
 </html>

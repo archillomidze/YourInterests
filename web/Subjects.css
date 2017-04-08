@@ -1,13 +1,64 @@
 hr {
     height: 3px;
     color: black;
-    background-color: black;
+    background-color: #00adee;
     padding: 5px;
     top:100px;
     position: relative;
 }
+#TopTextpolitics{
+    position: absolute;
+    right:650px;
+    color: #00adee;
+}
 #TopTextart{
-   position: absolute;
-   right:650px;
-   color: black;
+    position: absolute;
+    right:650px;
+    color: #00adee;
+}
+#TopTextcookbook{
+    position: absolute;
+    right:600px;
+    color: #00adee;
+}
+#TopTextfairytale{
+    position: absolute;
+    right:620px;
+    color: #00adee;
+}
+#TopTextmsc{
+    position: absolute;
+    right:650px;
+    color: #00adee; 
+}
+#TopTextsport{
+    position: absolute;
+    right:650px;
+    color: #00adee;
+}
+#artbody{
+    background-image: url("Resources/Art_Background.jpg");
+    background-size: 1400px 700px;
+    background-repeat: no-repeat;
+}
+#cookbookbody{
+    background-image: url("Resources/CookBook_Background.jpg");
+}
+#fairytalebody{
+    background-image: url("Resources/Fairy_Tale_Background.jpg");
+}
+#musicbody{
+    background-image: url("Resources/Music_Background.jpg");
+    background-size: 1400px 700px;
+    background-repeat: no-repeat;
+}
+#politicsbody{
+    background-image: url("Resources/Politics_Background.jpg");
+    background-size: 1400px 800px;
+    background-repeat: no-repeat;
+}
+#sportbody{
+    background-image: url("Resources/Sport_Background.jpg");
+    background-size: 1400px 800px;
+    background-repeat: no-repeat;
 }

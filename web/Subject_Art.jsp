@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="Subjects.css" type="text/css">
         <link rel="shortcut icon" href="Resources/Icon_T.ico">
     </head>
-    <body>
+    <body id="artbody">
         <h1 id="TopTextart">Art</h1>
-        <hr>
+        <hr id="hrft">
     </body>
 </html>

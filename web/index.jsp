@@ -42,24 +42,24 @@
                         <article class="one_third">
                             <figure>
                                 <figcaption>
-                                    <footer class="more"><a href="#"><img src="Resources/sportV2.jpg" width="290" height="180" alt=""></a></footer>
-                                    <footer class="more"><a href="#"><img src="Resources/music.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_Sport.jsp"><img src="Resources/sportV2.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_Music.jsp"><img src="Resources/music.jpg" width="290" height="180" alt=""></a></footer>
                                 </figcaption>
                             </figure>
                         </article>
                         <article class="one_third">
                             <figure>
                                 <figcaption>
-                                    <footer class="more"><a href="#"><img src="Resources/POLITICS1.jpg" width="290" height="180" alt=""></a></footer>
-                                    <footer class="more"><a href="#"><img src="Resources/art.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_Politics.jsp"><img src="Resources/POLITICS1.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_Art.jsp"><img src="Resources/art.jpg" width="290" height="180" alt=""></a></footer>
                                 </figcaption>
                             </figure>
                         </article>
                         <article class="one_third lastbox">
                             <figure>
                                 <figcaption>
-                                    <footer class="more"><a href="#"><img src="Resources/7eTModoin.gif" width="290" height="180" alt=""></a></footer>
-                                    <footer class="more"><a href="#"><img src="Resources/fairy_tale.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_CookBook.jsp"><img src="Resources/7eTModoin.gif" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_FairyTale.jsp"><img src="Resources/fairy_tale.jpg" width="290" height="180" alt=""></a></footer>
 
                                 </figcaption>
                             </figure>
