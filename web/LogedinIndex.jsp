@@ -14,11 +14,11 @@
                 <div>
                     <select id="green" style = "color: black;">
                         <option value="user"><%=((User) request.getAttribute("user")).getUsername()%></option>
-                        <option value="MyArticles" onclick="window.open('MyArticles.jsp','_self')">My Articles</option>
-                        <option value="Favourites" onclick="window.open('Favourites.jsp','_self');">Favourities</option>
-                        <option value="WanttoRead" onclick="window.open('WanttoRead.jsp','_self')">Want to Read</option>
-                        <option value="AlreadyRead" onclick="window.open('AlreadyRead.jsp','_self')">Already Read</option>
-                        <option value="AddNew" onclick="window.open('AddaNew.jsp','_self')">Add New+</option>   
+                        <option value="MyArticles" onclick="window.open('MyArticles.jsp', '_self')">My Articles</option>
+                        <option value="Favourites" onclick="window.open('Favourites.jsp', '_self');">Favourities</option>
+                        <option value="WanttoRead" onclick="window.open('WanttoRead.jsp', '_self')">Want to Read</option>
+                        <option value="AlreadyRead" onclick="window.open('AlreadyRead.jsp', '_self')">Already Read</option>
+                        <option value="AddNew" onclick="window.open('AddaNew.jsp', '_self')">Add New+</option>   
                     </select>
                 </div>
                 <div class="logo">
@@ -40,24 +40,24 @@
                         <article class="one_third">
                             <figure>
                                 <figcaption>
-                                    <footer class="more"><a href="#"><img src="Resources/sportV2.jpg" width="290" height="180" alt=""></a></footer>
-                                    <footer class="more"><a href="#"><img src="Resources/music.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_Sport.jsp"><img src="Resources/sportV2.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_Music.jsp"><img src="Resources/music.jpg" width="290" height="180" alt=""></a></footer>
                                 </figcaption>
                             </figure>
                         </article>
                         <article class="one_third">
                             <figure>
                                 <figcaption>
-                                    <footer class="more"><a href="#"><img src="Resources/POLITICS1.jpg" width="290" height="180" alt=""></a></footer>
-                                    <footer class="more"><a href="#"><img src="Resources/art.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_Politics.jsp"><img src="Resources/POLITICS1.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_Art.jsp"><img src="Resources/art.jpg" width="290" height="180" alt=""></a></footer>
                                 </figcaption>
                             </figure>
                         </article>
                         <article class="one_third lastbox">
                             <figure>
                                 <figcaption>
-                                    <footer class="more"><a href="#"><img src="Resources/7eTModoin.gif" width="290" height="180" alt=""></a></footer>
-                                    <footer class="more"><a href="#"><img src="Resources/fairy_tale.jpg" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_CookBook.jsp"><img src="Resources/7eTModoin.gif" width="290" height="180" alt=""></a></footer>
+                                    <footer class="more"><a href="Subject_FairyTale.jsp"><img src="Resources/fairy_tale.jpg" width="290" height="180" alt=""></a></footer>
 
                                 </figcaption>
                             </figure>
