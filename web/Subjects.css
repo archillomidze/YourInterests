@@ -1,0 +1,13 @@
+hr {
+    height: 3px;
+    color: black;
+    background-color: black;
+    padding: 5px;
+    top:100px;
+    position: relative;
+}
+#TopTextart{
+   position: absolute;
+   right:650px;
+   color: black;
+}

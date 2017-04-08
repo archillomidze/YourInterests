@@ -1,17 +1,14 @@
-<%-- 
-    Document   : Subject_Art
-    Created on : Apr 1, 2017, 3:24:15 PM
-    Author     : tatol
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Art</title>
+        <link rel="stylesheet" href="Subjects.css" type="text/css">
+        <link rel="shortcut icon" href="Resources/Icon_T.ico">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1 id="TopTextart">Art</h1>
+        <hr>
     </body>
 </html>
