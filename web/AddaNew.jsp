@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1 id="TopText">Add an Artice</h1>
-        <form>
+        <form action="AddaNewArticleServlet"  method="post">
             <div class="boxed">
                 <select id="SelectID" style = "color: black;">
                     <option value="choose">Choose Subjet</option>
@@ -30,10 +30,11 @@
                         <%
                             EventDAO eventDAO = new EventDAOImpl();
                             List<Event> allEvent = eventDAO.getAllEventBySubjectName(null);
+                            String selectedEventName = request.getParameter("datalist");
                             for (Event event : allEvent) {
                                 out.write("<option value=\"" + event.getName() + "\" id=\"" + event.getSubjectTitle() + "_" + event.getName() + " \">");
                             }
-                            %>  
+                        %>  
                     </datalist>
                 </div>
                 <input id="title" type="text" name="title" placeholder="Choose Title.."/> <br>
