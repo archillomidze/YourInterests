@@ -30,7 +30,6 @@
                         <%
                             EventDAO eventDAO = new EventDAOImpl();
                             List<Event> allEvent = eventDAO.getAllEventBySubjectName(null);
-                            String selectedEventName = request.getParameter("datalist");
                             for (Event event : allEvent) {
                                 out.write("<option value=\"" + event.getName() + "\" id=\"" + event.getSubjectTitle() + "_" + event.getName() + " \">");
                             }

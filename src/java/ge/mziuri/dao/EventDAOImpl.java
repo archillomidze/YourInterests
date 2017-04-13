@@ -60,7 +60,23 @@ public class EventDAOImpl implements EventDAO {
 
     @Override
     public Event getEventbySubjectTitleAndEventName(SubjectTitle subjecttitle, String eventname) {
-        
-        return null;
+        EventDAO eventDAO = new EventDAOImpl();
+        Event event = null;
+        try {
+            String sql = "SELECT * FROM event WHERE subject_title = ? AND name = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, subjecttitle.name());
+            pstmt.setString(2, eventname);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                event = new Event();
+                int id = rs.getInt("id");
+                event.setName(eventname);
+                event.setSubjectTitle(subjecttitle);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return event;
     }
 }

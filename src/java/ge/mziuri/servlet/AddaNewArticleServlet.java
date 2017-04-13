@@ -23,9 +23,9 @@ public class AddaNewArticleServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String subjecttitle = request.getParameter("subjecttitle");
-        String name=request.getParameter("name");
-        String articletitle = request.getParameter("articletitle");
+        String subjecttitle = request.getParameter("SelectID");
+        String selectedEventName = request.getParameter("datalist");
+        String articletitle = request.getParameter("title");
         String description = request.getParameter("description");
         ArticleDAO articleDAO = new ArticleDAOImpl();
         Article article = new Article();
@@ -34,13 +34,13 @@ public class AddaNewArticleServlet extends HttpServlet {
 
         EventDAO eventDAO = new EventDAOImpl();
         List<Event> allEvent = eventDAO.getAllEventBySubjectName(null);
-        String selectedEventName = request.getParameter("datalist");
         for (Event event : allEvent) {
             if (selectedEventName.equals(event.getName())) {
                 articleDAO.crateArticle(article, event.getId());
             } else {
                 Event selectedEvent = new Event();
                 selectedEvent.setName(selectedEventName);
+                selectedEvent.setSubjectTitle(SubjectTitle.valueOf(subjecttitle));
                 eventDAO.addEvent(selectedEvent);
                 articleDAO.crateArticle(article, selectedEvent.getId());
             }
