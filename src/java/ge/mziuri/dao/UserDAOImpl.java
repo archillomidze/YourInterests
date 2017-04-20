@@ -72,7 +72,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public void addtoWishlist(int id, User user) {
+    public void addtoWantToRead(int id, User user) {
         List<Article> wishlist = new ArrayList<>();
         try {
             String sql = "UPDATE system_user set wishlist = concat(wishlist, ?) WHERE id=?";

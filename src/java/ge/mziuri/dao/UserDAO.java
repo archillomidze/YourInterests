@@ -12,7 +12,7 @@ public interface UserDAO {
     
     void addtoFavorites(int id,User user);
     
-    void addtoWishlist(int id,User user);
+    void addtoWantToRead(int id,User user);
     
     void addtoAlreadyRead(int id,User user);
     
