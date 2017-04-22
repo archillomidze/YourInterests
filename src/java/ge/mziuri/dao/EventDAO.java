@@ -8,6 +8,8 @@ import java.util.List;
 public interface EventDAO {
     
     List<Event> getAllEventBySubjectName(String name);
-    void addEvent(Event event);
+    
+    int addEvent(Event event);
+    
     Event getEventbySubjectTitleAndEventName(SubjectTitle subjecttitle, String eventname);
 }

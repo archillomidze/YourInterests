@@ -12,25 +12,25 @@
         <link rel="shortcut icon" href="Resources/Icon_T.ico">
     </head>
     <body>
-        <h1 id="TopText">Add an Artice</h1>
+        <h1 id="TopText">Add an Article</h1>
         <form action="AddaNewArticleServlet"  method="post">
             <div class="boxed">
-                <select id="SelectID" style = "color: black;">
-                    <option value="choose">Choose Subjet</option>
-                    <option value="sport">Sport</option>  
-                    <option value="politics">Politics</option>  
-                    <option value="cookbook">Cookbook</option>  
-                    <option value="music">Music</option>  
-                    <option value="art">Art</option>  
-                    <option value="fairy_tale">Fairy Tale</option>  
+                <select id="SelectID" name="SelectID" style = "color: black;">
+                    <option value="choose">Choose Subject</option>
+                    <option value="SPORT">Sport</option>  
+                    <option value="POLITICS">Politics</option>  
+                    <option value="COOKBOOK">Cookbook</option>  
+                    <option value="MUSIC">Music</option>  
+                    <option value="ART">Art</option>  
+                    <option value="FAIRY_TALE">Fairy Tail</option>  
                 </select>
                 <div id="boxinbox">
-                    <input list="datalist" placeholder="Choose an Event ">
-                    <datalist id="datalist">
+                    <input list="datalist" name="datalist" placeholder="Choose an Event ">
+                    <datalist id="datalist" >
                         <%
                             EventDAO eventDAO = new EventDAOImpl();
                             List<Event> allEvent = eventDAO.getAllEventBySubjectName(null);
-                            for (Event event : allEvent) {
+                                for (Event event : allEvent) {
                                 out.write("<option value=\"" + event.getName() + "\" id=\"" + event.getSubjectTitle() + "_" + event.getName() + " \">");
                             }
                         %>  

@@ -31,19 +31,23 @@ public class AddaNewArticleServlet extends HttpServlet {
         Article article = new Article();
         article.setArticletitle(articletitle);
         article.setDescription(description);
-
         EventDAO eventDAO = new EventDAOImpl();
         List<Event> allEvent = eventDAO.getAllEventBySubjectName(null);
-        for (Event event : allEvent) {
-            if (selectedEventName.equals(event.getName())) {
-                articleDAO.crateArticle(article, event.getId());
-            } else {
-                Event selectedEvent = new Event();
-                selectedEvent.setName(selectedEventName);
-                selectedEvent.setSubjectTitle(SubjectTitle.valueOf(subjecttitle));
-                eventDAO.addEvent(selectedEvent);
-                articleDAO.crateArticle(article, selectedEvent.getId());
+        Event event = null;
+        for (Event e : allEvent) {
+            if (selectedEventName.equals(e.getName())) {
+                event = e;
+                break;
             }
+        }
+        if (event != null) {
+            articleDAO.crateArticle(article, event.getId());
+        } else {
+            Event selectedEvent = new Event();
+            selectedEvent.setName(selectedEventName);
+            selectedEvent.setSubjectTitle(SubjectTitle.valueOf(subjecttitle));
+            int eventId = eventDAO.addEvent(selectedEvent);
+            articleDAO.crateArticle(article, eventId);
         }
     }
 

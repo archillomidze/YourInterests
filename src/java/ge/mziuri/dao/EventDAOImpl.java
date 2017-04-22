@@ -12,6 +12,7 @@ import java.util.List;
 public class EventDAOImpl implements EventDAO {
 
     private Connection conn;
+    
     private PreparedStatement pstmt;
 
     public EventDAOImpl() {
@@ -34,9 +35,11 @@ public class EventDAOImpl implements EventDAO {
             }
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
+                int id = rs.getInt("id");
                 String eventname = rs.getString("name");
-                SubjectTitle Subject_title = SubjectTitle.valueOf(rs.getString("title"));
-                Event event = new Event (name, Subject_title);
+                SubjectTitle Subject_title = SubjectTitle.valueOf(rs.getString("subject_title"));
+                Event event = new Event(eventname, Subject_title);
+                event.setId(id);
                 events.add(event);
             }
         } catch (SQLException ex) {
@@ -46,16 +49,20 @@ public class EventDAOImpl implements EventDAO {
     }
 
     @Override
-    public void addEvent(Event event) {
+    public int addEvent(Event event) {
         try {
-            String sql = "INSERT INTO event (name, subject_title) VALUES (?,?)";
+            String sql = "INSERT INTO event (name, subject_title) VALUES (?,?) RETURNING id";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, event.getName());
             pstmt.setString(2, event.getSubjectTitle().name());
-            pstmt.executeUpdate();
+            ResultSet rs = pstmt.executeQuery();
+            rs.next();
+            int id = rs.getInt("id");
+            return id;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        return 0;
     }
 
     @Override

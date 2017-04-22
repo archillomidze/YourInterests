@@ -33,4 +33,14 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddaNewArticleServlet</servlet-name>
+        <servlet-class>ge.mziuri.servlet.AddaNewArticleServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AddaNewArticleServlet</servlet-name>
+        <url-pattern>/AddaNewArticleServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -12,7 +12,7 @@ package ge.mziuri.model.enums;
 public enum SubjectTitle {
     
     SPORT, 
-    POLITIC, 
+    POLITICS, 
     COOKBOOK,
     MUSIC,
     ART,
