@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ge.mziuri.servlet;
 
 import ge.mziuri.dao.UserDAO;
@@ -15,11 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author user_2
- */
-public class AddtoWishlist extends HttpServlet {
+public class AddtoMyListServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
@@ -40,7 +32,7 @@ public class AddtoWishlist extends HttpServlet {
         User user = new User();
         user.setId(userId);
         UserDAO userdao = new UserDAOImpl();
-        userdao.addtoWantToRead(id, user);
+        userdao.addtoMyList(id, user);
     }
 
 }
