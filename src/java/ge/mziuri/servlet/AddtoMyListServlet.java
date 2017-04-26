@@ -17,7 +17,8 @@ public class AddtoMyListServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
     }
-
+    
+    @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("articleId"));
         int userId = 0;

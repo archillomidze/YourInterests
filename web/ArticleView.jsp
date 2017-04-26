@@ -15,5 +15,7 @@
             
             <form action="AddtoWishlistServlet" method="post"><Button id="wishlist">Add to Wishlist</Button></form>
         </div>
+        
+        
     </body>
 </html>

@@ -43,4 +43,44 @@
         <servlet-name>AddaNewArticleServlet</servlet-name>
         <url-pattern>/AddaNewArticleServlet</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddtoAlreadyReadServlet</servlet-name>
+        <servlet-class>ge.mziuri.servlet.AddtoAlreadyReadServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AddtoAlreadyReadServlet</servlet-name>
+        <url-pattern>/AddtoAlreadyReadServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddtoFavouritesServlet</servlet-name>
+        <servlet-class>ge.mziuri.servlet.AddtoFavouritesServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AddtoFavouritesServlet</servlet-name>
+        <url-pattern>/AddtoFavouritesServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddtoWishlistServlet</servlet-name>
+        <servlet-class>ge.mziuri.servlet.AddtoWishlistServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AddtoWishlistServlet</servlet-name>
+        <url-pattern>/AddtoWishlistServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AddtoMyListServlet</servlet-name>
+        <servlet-class>ge.mziuri.servlet.AddtoMyListServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AddtoMyListServlet</servlet-name>
+        <url-pattern>/AddtoMyListServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
