@@ -16,7 +16,6 @@
                     <input id="inp2" type="file" accept="image/*" onchange="loadFile(event)">
                     <img id="inp1"/>
                     <script>
-                        var imgList = new Array();
                         var loadFile = function (event) {
                             var output = document.getElementById('inp1');
                             output.src = URL.createObjectURL(event.target.files[0]);
@@ -37,6 +36,7 @@
                             });
                         }
                     </script>
+                    <button id="submitbutton" type="submit">Submit</button>
                 </form>
                 </body>
                 </html>

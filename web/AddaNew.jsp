@@ -39,7 +39,7 @@
                 <input id="title" type="text" name="title" placeholder="Choose Title.."/> <br>
                 <textarea id="description" name="description" rows="4" cols="50" placeholder="Write some brief information"></textarea>
             </div>
-            <button id="sbbutton" type="submit" action="index.jsp">Submit</button>
+            <button id="sbbutton" type="submit">Submit</button>
         </form>
 
 
