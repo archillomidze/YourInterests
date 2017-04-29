@@ -10,7 +10,7 @@
     <body>
         <h1 id="TopText">Add your content<h1>
                 <hr>
-                <form>
+                <form action="AddaNewArticleElementServlet" method="post">
                     <textarea rows="10" cols="100"></textarea>
 
                     <input id="inp2" type="file" accept="image/*" onchange="loadFile(event)">
@@ -21,20 +21,20 @@
                             output.src = URL.createObjectURL(event.target.files[0]);
                         };
 
-                        var img = document.getElementById("inp1");
-
-                        if (img.complete) {
-                            var x = document.createElement("TEXTAREA");
-                            document.body.appendChild(x);
-                            x.setAttribute("style", "position:absolute; left:" + 280 + "px; top:" + 200 + "px");
-                            x.setAttribute("rows", "10");
-                            x.setAttribute("cols", "100");
-                        } else {
-                            img.addEventListener('load', loaded);
-                            img.addEventListener('error', function () {
-                                alert('error');
-                            });
-                        }
+//                        var img = document.getElementById("inp1");
+//
+//                        if (img.complete) {
+//                            var x = document.createElement("TEXTAREA");
+//                            document.body.appendChild(x);
+//                            x.setAttribute("style", "position:absolute; left:" + 280 + "px; top:" + 200 + "px");
+//                            x.setAttribute("rows", "10");
+//                            x.setAttribute("cols", "100");
+//                        } else {
+//                            img.addEventListener('load', loaded);
+//                            img.addEventListener('error', function () {
+//                                alert('error');
+//                            });
+//                        }
                     </script>
                     <button id="submitbutton" type="submit">Submit</button>
                 </form>

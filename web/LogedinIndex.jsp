@@ -14,11 +14,11 @@
                 <div>
                     <select id="green" style = "color: black;">
                         <option value="user"><%=((User) request.getAttribute("user")).getUsername()%></option>
-                        <option value="MyArticles" onclick="location.href='MyArticles.jsp'">My Articles</option>
-                        <option value="Favourites" onclick="location.href='Favourites.jsp'">Favourities</option>
-                        <option value="WanttoRead" onclick="location.href='WanttoRead.jsp'">Want to Read</option>
-                        <option value="AlreadyRead" onclick="location.href='AlreadyRead.jsp'">Already Read</option>
-                        <option value="AddNew" onclick="location.href='AddaNew.jsp'">Add New+</option>   
+                        <option value="MyArticles" onclick="location.href = 'MyArticles.jsp'">My Articles</option>
+                        <option value="Favourites" onclick="location.href = 'Favourites.jsp'">Favourities</option>
+                        <option value="WanttoRead" onclick="location.href = 'WanttoRead.jsp'">Want to Read</option>
+                        <option value="AlreadyRead" onclick="location.href = 'AlreadyRead.jsp'">Already Read</option>
+                        <option value="AddNew" onclick="location.href = 'AddaNew.jsp'">Add New+</option> 
                     </select>
                 </div>
                 <div class="logo">

@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1 id="TopText">Add an Article</h1>
-        <form action="AddaNewArticleServlet"  method="post">
+        <form action="AddaNewArticleServlet" method="post">
             <div class="boxed">
                 <select id="SelectID" name="SelectID" style = "color: black;">
                     <option value="choose">Choose Subject</option>
@@ -30,7 +30,7 @@
                         <%
                             EventDAO eventDAO = new EventDAOImpl();
                             List<Event> allEvent = eventDAO.getAllEventBySubjectName(null);
-                                for (Event event : allEvent) {
+                            for (Event event : allEvent) {
                                 out.write("<option value=\"" + event.getName() + "\" id=\"" + event.getSubjectTitle() + "_" + event.getName() + " \">");
                             }
                         %>  
@@ -39,7 +39,7 @@
                 <input id="title" type="text" name="title" placeholder="Choose Title.."/> <br>
                 <textarea id="description" name="description" rows="4" cols="50" placeholder="Write some brief information"></textarea>
             </div>
-            <button id="sbbutton" type="submit">Submit</button>
+                    <button id="sbbutton" type="submit">Continue</button>
         </form>
 
 
