@@ -10,7 +10,7 @@
     <body>
         <h1 id="TopText">Add your content<h1>
                 <hr>
-                <form action="AddaNewArticleElementServlet" method="post">
+                <form action="AddaNewArticleElementServlet" method="post" enctype="multipart/form-data">
                     <textarea rows="10" cols="100"></textarea>
 
                     <input id="inp2" type="file" accept="image/*" onchange="loadFile(event)">
