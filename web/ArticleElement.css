@@ -1,7 +1,7 @@
 textarea{
     position: absolute;
-    left:280px;
-    top: 170px;
+    left:23%;
+    bottom: 100px;
 }
 hr{
     height: 3px;
@@ -23,8 +23,8 @@ hr{
 }
 #inp2{
     position: absolute;
-    left:555px;
-    top: 400px;
+    left:575px;
+    top: 160px;
 }
 #submitbutton{
     position: absolute;
