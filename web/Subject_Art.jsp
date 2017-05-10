@@ -1,3 +1,7 @@
+<%@page import="ge.mziuri.model.Event"%>
+<%@page import="ge.mziuri.dao.EventDAOImpl"%>
+<%@page import="java.util.List"%>
+<%@page import="ge.mziuri.dao.EventDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -10,5 +14,12 @@
     <body id="artbody">
         <h1 id="TopTextart">Art</h1>
         <hr id="hrft">
+        <%
+            EventDAO eventDAO = new EventDAOImpl();
+            List<Event> allEvent = eventDAO.getAllEventBySubjectName("art");
+            for (Event event : allEvent) {
+                out.write(event.getName());
+            }
+        %>
     </body>
 </html>
