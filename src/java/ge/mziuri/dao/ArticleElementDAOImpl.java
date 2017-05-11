@@ -27,7 +27,6 @@ public class ArticleElementDAOImpl implements ArticleElementDAO{
                     text = text + SPLITTER;
                 }
             }
-            
             String pictures = "";
             for(int i = 0; i < articleElement.getPicturesList().size(); i++){
                 pictures = pictures + articleElement.getPicturesList().get(i);
@@ -35,7 +34,6 @@ public class ArticleElementDAOImpl implements ArticleElementDAO{
                     pictures = pictures + SPLITTER;
                 }
             }
-            
             pstmt = conn.prepareStatement(sql);
             pstmt.setInt(1, articleElement.getIndex());
             pstmt.setString(2, text);

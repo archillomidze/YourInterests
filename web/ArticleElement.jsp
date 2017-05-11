@@ -11,9 +11,8 @@
           <h1 id="TopText">Add your content<h1>
                 <hr>
                 <form action="AddaNewArticleElementServlet" method="post" enctype="multipart/form-data">
-                    <textarea rows="10" cols="100"></textarea>
-
-                    <input id="inp2" type="file" accept="image/*" onchange="loadFile(event)"/>
+                    <textarea name="text" rows="10" cols="100"></textarea>
+                    <input id="inp2" type="file" name="file" accept="image/*" onchange="loadFile(event)"/>
                     <img id="inp1" src="Resources/No_Image.webp">
                     <script>
                         var output = document.getElementById('inp1');

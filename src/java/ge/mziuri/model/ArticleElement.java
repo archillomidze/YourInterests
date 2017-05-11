@@ -14,11 +14,6 @@ public class ArticleElement {
     public ArticleElement() {
     }
 
-    public ArticleElement(int id, int index) {
-        this.id = id;
-        this.index = index;
-    }
-
     public int getId() {
         return id;
     }

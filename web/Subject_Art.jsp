@@ -16,8 +16,8 @@
         <hr id="hrft">
         <%
             EventDAO eventDAO = new EventDAOImpl();
-            List<Event> allEvent = eventDAO.getAllEventBySubjectName("art");
-            for (Event event : allEvent) {
+            List<Event> allartEvent = eventDAO.getAllEventBySubjectName("ART");
+            for (Event event : allartEvent) {
                 out.write(event.getName());
             }
         %>

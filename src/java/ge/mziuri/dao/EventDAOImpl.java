@@ -25,7 +25,7 @@ public class EventDAOImpl implements EventDAO {
         try {
             String sql;
             if (name != null) {
-                sql = "SELECT * FROM event WHERE subject_name = ?";
+                sql = "SELECT * FROM event WHERE subject_title = ?";
             } else {
                 sql = "SELECT * FROM event";
             }
