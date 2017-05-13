@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -100,6 +101,12 @@ public class AddaNewArticleElementServlet extends HttpServlet {
             ArticleElementDAO articleElementDAO = new ArticleElementDAOImpl();
             articleElementDAO.createArticleElement(articleElement, 1);
         } catch (FileUploadException  ex) {
+            System.out.println(ex.getMessage());
+        }
+        RequestDispatcher rd = request.getRequestDispatcher("ArticleElement.jsp");
+        try {
+            rd.forward(request, response);
+        } catch (ServletException | IOException ex) {
             System.out.println(ex.getMessage());
         }
     }

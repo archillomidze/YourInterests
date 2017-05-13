@@ -1,7 +1,7 @@
 textarea{
     position: absolute;
-    left:23%;
-    bottom: 100px;
+    left:18%;
+    bottom: -15%;
 }
 hr{
     height: 3px;
@@ -26,10 +26,19 @@ hr{
     left:575px;
     top: 160px;
 }
+#nextpage{
+    position: absolute;
+    left:45.5%;
+    bottom:-30%;
+}
 #submitbutton{
     position: absolute;
     width:200px;
     height:40px;
-    top:600px;
+    bottom:-40%;
     left:580px;
+}
+#rud{
+    position: absolute;
+    bottom:-50%;
 }
