@@ -11,6 +11,9 @@
         <h1 id="TopText">Add your content<h1>
                 <hr>
                 <form action="AddaNewArticleElementServlet" method="post">
+                    <%
+                        out.write("<font size=\"5\" id=\"pagecount\">"+"Page 1"+"</font>");
+                    %>
                     <input id="inp2" type="file" name="file" accept="image/*" onchange="loadFile(event)"/>
                     <img id="inp1" src="Resources/No_Image.png">
                     <textarea name="text" rows="10" cols="110"></textarea>
@@ -27,11 +30,13 @@
                         var loadFile = function (event) {
                             var output = document.getElementById('inp1');
                             output.src = URL.createObjectURL(event.target.files[0]);
-
+                            
                         };
-                    </script>
-                    <button id="submitbutton">Submit</button>
+                    </script>           
                     <pre id="rud">   </pre>
+                </form>
+                <form action="index.jsp">
+                    <button id="submitbutton">Submit</button>
                 </form>
                 </body>
                 </html>

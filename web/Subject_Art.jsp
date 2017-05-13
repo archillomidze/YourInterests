@@ -18,8 +18,9 @@
                 EventDAO eventDAO = new EventDAOImpl();
                 List<Event> allartEvent = eventDAO.getAllEventBySubjectName("ART");
                 for (Event event : allartEvent) {
-                    out.write(event.getName());
+                    out.write("<p id=\"RAGACA\" >" + event.getName() + "</p>");
                 }
-            %>
+                %>
+                
     </body>
 </html>

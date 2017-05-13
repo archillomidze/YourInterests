@@ -42,3 +42,8 @@ hr{
     position: absolute;
     bottom:-50%;
 }
+#pagecount{
+    position: absolute;
+    right:150px;
+    top:200px;
+}
