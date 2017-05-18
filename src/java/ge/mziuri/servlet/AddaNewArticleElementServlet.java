@@ -97,10 +97,14 @@ public class AddaNewArticleElementServlet extends HttpServlet {
             texts.add(text);
             articleElement.setTextList(texts);
             articleElement.setPicturesList(images);
-            articleElement.setIndex(7);
+            int k=1;
+            if (request.getParameter("nextpage") != null) {
+                k++;
+                articleElement.setIndex(k);
+            }
             ArticleElementDAO articleElementDAO = new ArticleElementDAOImpl();
             articleElementDAO.createArticleElement(articleElement, 1);
-        } catch (FileUploadException  ex) {
+        } catch (FileUploadException ex) {
             System.out.println(ex.getMessage());
         }
         RequestDispatcher rd = request.getRequestDispatcher("ArticleElement.jsp");
