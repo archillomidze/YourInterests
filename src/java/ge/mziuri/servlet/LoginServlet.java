@@ -27,7 +27,6 @@ public class LoginServlet extends HttpServlet {
         User user = userDAO.getUser(username, Integer.toString(password.hashCode()));
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
-        PrintWriter pw = response.getWriter();
         if (user == null) {
             RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
             request.setAttribute("loginFailed", true);

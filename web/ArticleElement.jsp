@@ -11,10 +11,18 @@
     <body onload="checkFirstVisit()">
         <h1 id="TopText">Add your content<h1>
                 <hr>
-                <form action="AddaNewArticleElementServlet" method="post">
+                <form action="AddaNewArticleElementServlet" method="post" enctype="multipart/form-data">
                     <%
-                        ArticleElement articleElement = new ArticleElement();
-                        out.write("<font size=\"5\" id=\"pagecount\">" + "Page " + articleElement.getIndex() + "</font>");
+                        Cookie[] cockies = request.getCookies();
+                        int index = 1;
+                        if (cockies != null) {
+                            for (Cookie cookie : cockies) {
+                                if (cookie.getName().equals("elementIndex")) {
+                                    index = Integer.parseInt(cookie.getValue());
+                                }
+                            }
+                        }
+                        out.write("<font size=\"5\" id=\"pagecount\">" + "Page " + index + "</font>");
                     %>
                     <input id="inp2" type="file" name="file" accept="image/*" onchange="loadFile(event)"/>
                     <img id="inp1" src="Resources/No_Image.png">
@@ -57,7 +65,8 @@
                                 if (cookie.getName().equals("userId")) {
                                     userId = Integer.parseInt(cookie.getValue());
                                 }
-                            }
+                            }   
+                        }
                     %>
                 </form>
                 </body>

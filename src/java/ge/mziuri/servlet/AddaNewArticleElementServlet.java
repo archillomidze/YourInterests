@@ -15,6 +15,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -97,11 +98,18 @@ public class AddaNewArticleElementServlet extends HttpServlet {
             texts.add(text);
             articleElement.setTextList(texts);
             articleElement.setPicturesList(images);
-            int k=1;
-            if (request.getParameter("nextpage") != null) {
-                k++;
-                articleElement.setIndex(k);
+            Cookie[] cockies = request.getCookies();
+            int index = 1;
+            if (cockies != null) {
+                for (Cookie cookie : cockies) {
+                    if (cookie.getName().equals("elementIndex")) {
+                        index = Integer.parseInt(cookie.getValue());
+                    }
+                }
             }
+            articleElement.setIndex(index);
+            Cookie cookie = new Cookie("elementIndex", Integer.toString(index + 1));
+            response.addCookie(cookie);
             ArticleElementDAO articleElementDAO = new ArticleElementDAOImpl();
             articleElementDAO.createArticleElement(articleElement, 1);
         } catch (FileUploadException ex) {
