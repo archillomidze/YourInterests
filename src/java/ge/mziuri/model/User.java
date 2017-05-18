@@ -11,23 +11,20 @@ public class User {
     private String surname;
     private String username;
     private String password;
-    private boolean VIPStatus;
     private List<Article> WantToRead = new ArrayList<>(); 
     private List<Article> AlreadyRead = new ArrayList<>(); 
     private List<Article> Favorites = new ArrayList<>(); 
+    private List<Article> MyArticles = new ArrayList<>(); 
         
     public User() {
     }
 
-    public User(String firstname, String surname, String username, String password, boolean VIPStatus) {
+    public User(String firstname, String surname, String username, String password) {
         this.firstname = firstname;
         this.surname = surname;
         this.username = username;
         this.password = password;
-        this.VIPStatus = VIPStatus;
     }
-
-    
 
     public int getId() {
         return id;
@@ -69,14 +66,6 @@ public class User {
         this.password = password;
     }
 
-    public boolean isVIPStatus() {
-        return VIPStatus;
-    }
-
-    public void setVIPStatus(boolean VIPStatus) {
-        this.VIPStatus = VIPStatus;
-    }
-
     public List<Article> getWantToRead() {
         return WantToRead;
     }
@@ -99,6 +88,14 @@ public class User {
 
     public void setFavorites(List<Article> Favorites) {
         this.Favorites = Favorites;
+    }
+
+    public List<Article> getMyArticles() {
+        return MyArticles;
+    }
+
+    public void setMyArticles(List<Article> MyArticles) {
+        this.MyArticles = MyArticles;
     }
     
     

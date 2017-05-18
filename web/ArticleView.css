@@ -1,0 +1,51 @@
+#rightpanel{
+    position: absolute;
+    background: #D6D6D6;
+    width: 200px;
+    height: 625px;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    right:20px;
+}
+#favourites {
+    position: absolute;
+    left:28px;
+    top:120px;
+    width:145px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#alreadyRead {
+    position: absolute;
+    left:25px;
+    top:280px;
+    width:150px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+#wishlist{
+    position: absolute;
+    left:23px;
+    top:450px;
+    width:150px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}

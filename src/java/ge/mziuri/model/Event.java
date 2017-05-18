@@ -5,6 +5,7 @@
  */
 package ge.mziuri.model;
 
+import ge.mziuri.model.enums.SubjectTitle;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,14 +17,15 @@ public class Event {
     
     private int id;
     private String name;
+    private SubjectTitle title;
     private List<Article> ArticlesList = new ArrayList<>(); 
 
     public Event() {
     }
 
-    public Event(int id, String name) {
-        this.id = id;
+    public Event(String name, SubjectTitle title) {
         this.name = name;
+        this.title = title;
     }
 
     public int getId() {
@@ -48,6 +50,14 @@ public class Event {
 
     public void setArticlesList(List<Article> ArticlesList) {
         this.ArticlesList = ArticlesList;
+    }
+
+    public SubjectTitle getSubjectTitle() {
+        return title;
+    }
+
+    public void setSubjectTitle(SubjectTitle title) {
+        this.title = title;
     }
     
     

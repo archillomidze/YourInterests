@@ -1,0 +1,49 @@
+textarea{
+    position: absolute;
+    left:18%;
+    bottom: -15%;
+}
+hr{
+    height: 3px;
+    color: white;
+    background-color: blue;
+    padding: 5px;
+    top:100px;
+    position: relative;
+}
+#TopText{
+    position: absolute;
+    color: #0095cc;
+    left:550px;
+}
+#inp1{
+    position: absolute;
+    left:480px;
+    top: 380px;
+}
+#inp2{
+    position: absolute;
+    left:575px;
+    top: 160px;
+}
+#nextpage{
+    position: absolute;
+    left:45.5%;
+    bottom:-30%;
+}
+#submitbutton{
+    position: absolute;
+    width:200px;
+    height:40px;
+    bottom:-40%;
+    left:580px;
+}
+#rud{
+    position: absolute;
+    bottom:-50%;
+}
+#pagecount{
+    position: absolute;
+    right:150px;
+    top:200px;
+}

@@ -1,30 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ge.mziuri.model;
 
-import ge.mziuri.model.enums.ArticleTitle;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author user_2
- */
+
 public class Article {
     
     private int id;
-    private ArticleTitle articletitle;
+    private String articletitle;
     private List<ArticleElement> ArticleElementsList = new ArrayList<>(); 
+    private String description;
 
     public Article() {
     }
 
-    public Article(int id, ArticleTitle articletitle) {
+    public Article(int id, String articletitle, String description) {
         this.id = id;
         this.articletitle = articletitle;
+        this.description = description;
     }
 
     public int getId() {
@@ -35,11 +29,11 @@ public class Article {
         this.id = id;
     }
 
-    public ArticleTitle getArticletitle() {
+    public String getArticletitle() {
         return articletitle;
     }
 
-    public void setArticletitle(ArticleTitle articletitle) {
+    public void setArticletitle(String articletitle) {
         this.articletitle = articletitle;
     }
 
@@ -49,6 +43,14 @@ public class Article {
 
     public void setArticleElementsList(List<ArticleElement> ArticleElementsList) {
         this.ArticleElementsList = ArticleElementsList;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
     
     

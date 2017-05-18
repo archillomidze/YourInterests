@@ -15,12 +15,11 @@ public class RegisterServlet extends HttpServlet {
     
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("რამე");
+        
     }
     
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("ვინმე");
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
         String username = request.getParameter("username");
@@ -28,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
         UserDAO userDAO = new UserDAOImpl();
         User user = new User(firstname, lastname, username, password);
         userDAO.addUser(user);
-        RequestDispatcher rd = request.getRequestDispatcher("index.html");
+        RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
         rd.forward(request, response);
     }
     

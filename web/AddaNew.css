@@ -1,0 +1,82 @@
+body{
+    background-color: #2ECC71;
+}
+#TopText{
+    position: absolute;
+    right:580px;
+    color: white;
+    top:0px;
+}
+.boxed {
+    position: absolute;
+    border: 10px solid white;
+    top:80px;
+    right:460px;
+    width:400px;
+    height:400px;
+}
+#SelectID{
+    position:absolute;
+    top:20px;
+    right:50px;
+    width:300px;
+}
+select{
+    background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>");
+    background-color:#fff;
+    background-repeat:no-repeat;
+    background-position: right 10px top 15px;
+    background-size: 16px 16px;
+    color:white;
+    padding:12px;
+    width:300px;
+    font-family:arial,tahoma;
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    text-align:center;
+    text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+    border-radius:3px;
+    -webkit-border-radius:3px;
+    -webkit-appearance: none;
+    border:0;
+    outline:0;
+    -webkit-transition:0.3s ease all;
+    -moz-transition:0.3s ease all;
+    -ms-transition:0.3s ease all;
+    -o-transition:0.3s ease all;
+    transition:0.3s ease all;
+}
+#boxinbox{
+    position: absolute;
+    border: 5px solid white;
+    top:90px;
+    right:95px;
+    width:210px;
+    height:20px;
+}
+#title{
+    position: absolute;
+    right:77px;
+    top: 150px;
+    width:250px;
+    height:25px;
+}
+#description{
+    position: absolute;
+    right:60px;
+    top: 210px;
+    width:280px;
+    height:140px;
+}
+#sbbutton{
+    position: absolute;
+    right:520px;
+    bottom:70px;
+    height: 50px;
+    width: 300px;
+}
+input{
+    position: absolute;
+    width:206px;
+}

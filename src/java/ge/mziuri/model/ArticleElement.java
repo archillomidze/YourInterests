@@ -1,18 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ge.mziuri.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import javafx.scene.text.Text;
 
-/**
- *
- * @author user_2
- */
 public class ArticleElement {
     
     private int id;
@@ -21,11 +12,6 @@ public class ArticleElement {
     private List<String> PicturesList = new ArrayList<>();
 
     public ArticleElement() {
-    }
-
-    public ArticleElement(int id, int index) {
-        this.id = id;
-        this.index = index;
     }
 
     public int getId() {

@@ -1,0 +1,16 @@
+body{
+    background-image:url(Resources/StandartImage.jpg);
+}
+hr {
+    height: 3px;
+    color: white;
+    background-color: white;
+    padding: 5px;
+    top:100px;
+    position: relative;
+}
+#TopText{
+    position: absolute;
+    right:580px;
+    color: white;
+}
