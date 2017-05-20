@@ -1,3 +1,4 @@
+<%@page import="ge.mziuri.util.CookieUtil"%>
 <%@page import="ge.mziuri.model.ArticleElement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,23 +12,15 @@
     <body onload="checkFirstVisit()">
         <h1 id="TopText">Add your content<h1>
                 <hr>
-                <form action="AddaNewArticleElementServlet" method="post" enctype="multipart/form-data">
+                <form action="AddaNewArticleElementServlet" method="post" name="elementform" id="elementformid" enctype="multipart/form-data">
                     <%
-                        Cookie[] cockies = request.getCookies();
-                        int index = 1;
-                        if (cockies != null) {
-                            for (Cookie cookie : cockies) {
-                                if (cookie.getName().equals("elementIndex")) {
-                                    index = Integer.parseInt(cookie.getValue());
-                                }
-                            }
-                        }
+                        int index = Integer.parseInt(CookieUtil.getCookieValue("elementIndex", request, true));
                         out.write("<font size=\"5\" id=\"pagecount\">" + "Page " + index + "</font>");
                     %>
                     <input id="inp2" type="file" name="file" accept="image/*" onchange="loadFile(event)"/>
                     <img id="inp1" src="Resources/No_Image.png">
                     <textarea name="text" rows="10" cols="110"></textarea>
-                    <button><a id="nextpage" name="nextpage" value="confirm" href="#" type="submit"><font size="4">To the next page</font></a></button>
+                    <button id="hiddenbutton"><a id="nextpage" name="nextpage" value="confirm" href="#" type="submit"><font size="4">To the next page</font></a></button>
                     <script>
                         var output = document.getElementById('inp1');
                         output.setAttribute("top", "100px");
@@ -57,17 +50,6 @@
                 </form>
                 <form action="index.jsp">
                     <button id="submitbutton">Submit</button>
-                    <%
-                        Cookie[] cookies = request.getCookies();
-                        int userId = 0;
-                        if (cookies != null) {
-                            for (Cookie cookie : cookies) {
-                                if (cookie.getName().equals("userId")) {
-                                    userId = Integer.parseInt(cookie.getValue());
-                                }
-                            }   
-                        }
-                    %>
                 </form>
                 </body>
                 </html>

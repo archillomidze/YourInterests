@@ -3,6 +3,7 @@ package ge.mziuri.servlet;
 import ge.mziuri.dao.ArticleElementDAO;
 import ge.mziuri.dao.ArticleElementDAOImpl;
 import ge.mziuri.model.ArticleElement;
+import ge.mziuri.util.CookieUtil;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -99,17 +100,10 @@ public class AddaNewArticleElementServlet extends HttpServlet {
             articleElement.setTextList(texts);
             articleElement.setPicturesList(images);
             Cookie[] cockies = request.getCookies();
-            int index = 1;
-            if (cockies != null) {
-                for (Cookie cookie : cockies) {
-                    if (cookie.getName().equals("elementIndex")) {
-                        index = Integer.parseInt(cookie.getValue());
-                    }
-                }
-            }
+            int index = Integer.parseInt(CookieUtil.getCookieValue("elementIndex", request, true));
             articleElement.setIndex(index);
-            Cookie cookie = new Cookie("elementIndex", Integer.toString(index + 1));
-            response.addCookie(cookie);
+            CookieUtil.addCookie("elementIndex", Integer.toString(index + 1), response);
+            request.setAttribute("elementIndex", Integer.toString(index + 1));
             ArticleElementDAO articleElementDAO = new ArticleElementDAOImpl();
             articleElementDAO.createArticleElement(articleElement, 1);
         } catch (FileUploadException ex) {

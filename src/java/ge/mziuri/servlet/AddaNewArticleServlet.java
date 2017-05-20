@@ -7,11 +7,11 @@ import ge.mziuri.dao.EventDAOImpl;
 import ge.mziuri.model.Article;
 import ge.mziuri.model.Event;
 import ge.mziuri.model.enums.SubjectTitle;
+import ge.mziuri.util.CookieUtil;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -51,8 +51,7 @@ public class AddaNewArticleServlet extends HttpServlet {
             int eventId = eventDAO.addEvent(selectedEvent);
             articleDAO.crateArticle(article, eventId);
         }
-        Cookie cookie = new Cookie("elementIndex", "1");
-        response.addCookie(cookie);
+        CookieUtil.addCookie("elementIndex", "1", response);
         RequestDispatcher rd = request.getRequestDispatcher("ArticleElement.jsp");
         try {
             rd.forward(request, response);

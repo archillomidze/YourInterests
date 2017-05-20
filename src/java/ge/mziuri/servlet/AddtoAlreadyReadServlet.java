@@ -4,6 +4,7 @@ package ge.mziuri.servlet;
 import ge.mziuri.dao.UserDAO;
 import ge.mziuri.dao.UserDAOImpl;
 import ge.mziuri.model.User;
+import ge.mziuri.util.CookieUtil;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
@@ -21,15 +22,7 @@ public class AddtoAlreadyReadServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("articleId"));
-        int userId = 0;
-        Cookie[] cockies = request.getCookies();
-        if (cockies != null) {
-            for (Cookie cookie : cockies) {
-                if (cookie.getName().equals("userId")) {
-                    userId = Integer.parseInt(cookie.getValue());
-                }
-            }
-        }
+        int userId = Integer.parseInt(CookieUtil.getCookieValue("userId", request, false));
         User user = new User();
         user.setId(userId);
         UserDAO userdao = new UserDAOImpl();

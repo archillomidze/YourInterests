@@ -14,13 +14,13 @@
     <body id="artbody">
         <h1 id="TopTextart">Art</h1>
         <hr id="hrft">
-            <%
-                EventDAO eventDAO = new EventDAOImpl();
-                List<Event> allartEvent = eventDAO.getAllEventBySubjectName("ART");
-                for (Event event : allartEvent) {
-                    out.write("<p id=\"RAGACA\" >" + event.getName() + "</p>");
-                }
-                %>
-                
+        <%
+            EventDAO eventDAO = new EventDAOImpl();
+            List<Event> allartEvent = eventDAO.getAllEventBySubjectName("ART");
+            for (Event event : allartEvent) {
+                out.write("<p id=\"RAGACA\" >" + event.getName() + "</p>");
+            }
+
+        %>
     </body>
 </html>
