@@ -1,4 +1,3 @@
-
 package ge.mziuri.servlet;
 
 import ge.mziuri.dao.UserDAO;
@@ -13,12 +12,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class RegisterServlet extends HttpServlet {
-    
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        int x=17;
+        int x = 17;
     }
-    
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String firstname = request.getParameter("firstname");
@@ -39,7 +38,7 @@ public class RegisterServlet extends HttpServlet {
             request.setAttribute("user", user);
             rd.forward(request, response);
         }
-        
+
     }
-    
+
 }
