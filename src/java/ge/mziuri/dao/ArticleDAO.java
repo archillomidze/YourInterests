@@ -6,6 +6,7 @@
 package ge.mziuri.dao;
 
 import ge.mziuri.model.Article;
+import java.util.List;
 
 /**
  *
@@ -14,4 +15,8 @@ import ge.mziuri.model.Article;
 public interface ArticleDAO {
     
     void crateArticle(Article article, int eventId);
+    
+    List<Article> getAllArticlesByEventID(int id);
+    
+    Article getEventbyEventNameAndArticleName(String eventname, String articlename);
 }
