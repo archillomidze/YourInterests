@@ -35,16 +35,6 @@
                             output.src = URL.createObjectURL(event.target.files[0]);
 
                         };
-                        function checkFirstVisit() {
-                            var i = 0;
-                            if (document.cookie.indexOf('mycookie') === -1) {
-
-                                document.cookie = 'mycookie=1';
-                            } else {
-                                i++;
-                            }
-                            return i;
-                        }
                     </script>           
                     <pre id="rud">   </pre>
                 </form>
