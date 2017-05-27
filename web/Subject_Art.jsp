@@ -22,15 +22,15 @@
         <hr id="hrft">
         <%
             EventDAO eventDAO = new EventDAOImpl();
-            ArticleDAO articleDAO=new ArticleDAOImpl();
-            ArticleElementDAO articleElementDAO=new ArticleElementDAOImpl();
+            ArticleDAO articleDAO = new ArticleDAOImpl();
+            ArticleElementDAO articleElementDAO = new ArticleElementDAOImpl();
             List<Event> allartEvent = eventDAO.getAllEventBySubjectName("ART");
-            
-            for (Event event : allartEvent) {
-                out.write("<p id=\"RAGACA\" >" + event.getName() + "</p>");
-                
-            }
 
+            for (Event event : allartEvent) {
+                out.write("<p id=\"events_art\" >" + event.getName() + "___" + "</p>");
+                out.write("<a href="+">"+"<p id=\"articles_art\" >"+articleDAO.getAllArticlesByEventID(event.getId())+"<a>");
+
+            }
         %>
     </body>
 </html>

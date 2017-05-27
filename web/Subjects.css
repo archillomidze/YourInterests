@@ -62,7 +62,11 @@ hr {
     background-size: 1400px 800px;
     background-repeat: no-repeat;
 }
-#RAGACA{
+#events_art{
+    position: absolute;
+    color:#0095cc;
+}
+#articles_art{
     position: absolute;
     color:white;
 }
