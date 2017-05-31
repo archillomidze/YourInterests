@@ -1,3 +1,6 @@
+<%@page import="ge.mziuri.dao.ArticleElementDAOImpl"%>
+<%@page import="ge.mziuri.dao.ArticleElementDAO"%>
+<%@page import="ge.mziuri.util.StringUtil"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -10,7 +13,8 @@
 
         <img id="mainImage" src="Resources/No_Image.png">
         <%
-            out.write("<font size=\"5\" id=\"articleText\">" + "</font>");
+            ArticleElementDAO articleElementDAO = new ArticleElementDAOImpl();
+            out.write("<font size=\"5\" id=\"articleText\">" + articleElementDAO.getArticleElementsByArticleId(5) + "</font>");
         %>
 
         <div id="rightpanel">
